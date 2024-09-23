@@ -1,4 +1,5 @@
 import { GridFSBucket } from 'mongodb';
+import fs from "fs"
 
 const upload = async (req, res) => {
     try {
@@ -134,6 +135,20 @@ const myFiles = async (req, res) => {
 
 
 
+const docsRes = async(req,res)=>{
 
 
-export { upload,myFiles };
+const buffer = fs.readFileSync("./a.docx")
+
+const base = buffer.toString("base64")
+
+
+    console.log("testing")
+    res.status(200).json({
+        data:base
+    })
+}
+
+
+
+export { upload,myFiles,docsRes };

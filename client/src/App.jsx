@@ -6,6 +6,7 @@ import Home from './Pages/home/home'
 import MyFilesList from './Pages/file/File'
 import Quill from './Pages/quill/Quill'
 import Test from './Pages/Test/Test'
+import Docs from './Pages/doc/Docs'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Route path='/file' element={<MyFilesList/>}/>
       <Route path='/quill' element={<Quill/>}/>
       <Route path='/test' element={<Test/>}/>
+      <Route path='/doc' element={<Docs/>}/>
     </Routes>
     </BrowserRouter>
   )

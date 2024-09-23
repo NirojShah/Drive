@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { myFiles, upload } from "../controller/fileController.js";
+import { docsRes, myFiles, upload } from "../controller/fileController.js";
 import { auth } from "../middleware/auth.js";
 import mongoose from "mongoose";
 
@@ -8,6 +8,8 @@ const fileRoute = Router()
 
 fileRoute.post("/upload",auth,upload)
 fileRoute.get("/myfile",auth,myFiles)
+
+fileRoute.get("/doc",docsRes)
 
 fileRoute.get("/file/:id", async (req, res) => {
     try {
